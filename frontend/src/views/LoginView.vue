@@ -1,7 +1,9 @@
 <template>
     <div class="wrapper">
         <div class="container">
-            <router-link to="/" class="header pointer">LOGO</router-link>
+            <router-link to="/" class="header pointer">
+                <logo></logo>
+            </router-link>
             <form class="login-form" @submit.prevent>
                 <div class="login-form__input-box">
                     <label for="username">아이디</label>
@@ -32,10 +34,14 @@
 </template>
 
 <script>
+import Logo from '@/components/static/Logo.vue';
 import { mapActions } from 'vuex';
 import router from '@/router';
 
 export default {
+    components: {
+        Logo,
+    },
     data: function() {
         return {
             username: '',
@@ -110,11 +116,9 @@ export default {
     justify-content: center;
 }
 .header {
-    display: block;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 56px;
     margin: 10px 0 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .login-form__input-box {
     margin-bottom: 16px;

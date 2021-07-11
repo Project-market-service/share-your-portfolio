@@ -1,6 +1,8 @@
 <template>
     <div class="header-nav">
-        <router-link to="/" class="header-nav__name">LOGO</router-link>
+        <router-link to="/">
+            <logo></logo>
+        </router-link>
         <div class="header-nav__links">
             <div v-if="isLogined"  class="header-nav__link">
                 <div class="header-nav__user-image"
@@ -26,12 +28,14 @@
 </template>
 
 <script>
+import Logo from '@/components/static/Logo.vue';
 import UserImage from '@/components/common/UserImage.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name: 'HeaderNav',
     components: {
+        Logo,
         UserImage,
     },
     data: function() {
@@ -72,10 +76,6 @@ export default {
     align-items: center;
     justify-content: space-between;
     background-color: #f5f5f5;
-}
-.header-nav__name {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 46px;
 }
 .header-nav__link {
     display: flex;
