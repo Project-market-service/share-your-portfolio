@@ -15,8 +15,8 @@
                 </div>
                 <ul v-if="showDropbox" class="header-nav__drop-box shadow">
                     <li class="pointer"><router-link to="/account">계정 관리</router-link></li>
-                    <li class="pointer">채팅</li>
-                    <li class="pointer" @click="logout()">로그아웃</li>
+                    <li class="pointer"><router-link to="/message">채팅</router-link></li>
+                    <li class="pointer" @click="doLogout()">로그아웃</li>
                 </ul>
             </div>
             <div v-else class="header-nav__link">
@@ -63,6 +63,10 @@ export default {
         changeDropboxState() {
             this.showDropbox = !this.showDropbox;
         },
+        doLogout() {
+            this.logout();
+            this.$router.push('/');
+        }
     }
 }
 </script>

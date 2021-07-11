@@ -5,6 +5,7 @@ import MainView from '@/views/MainView.vue';
 import LoginView from '@/views/LoginView.vue';
 import PostView from '@/views/PostView.vue';
 import AccountView from '@/views/AccountView.vue';
+import ChatView from '@/views/ChatView.vue';
 import TestView from '@/views/TestView.vue';
 import store from '@/store';
 
@@ -34,6 +35,14 @@ const router = new VueRouter({
             path: '/account',
             name: 'account',
             component: AccountView,
+            meta: {
+                requireLogin: true,
+            }
+        },
+        {
+            path: '/message',
+            name: 'message',
+            component: ChatView,
             meta: {
                 requireLogin: true,
             }
