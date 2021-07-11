@@ -1,6 +1,8 @@
 <template>
     <div class="container">
-        <chat-member-list class="chat-member-list"></chat-member-list>
+        <chat-member-list 
+            :members="members"
+            class="chat-member-list"></chat-member-list>
         <chat-box class="chat-box"></chat-box>
     </div>
 </template>
@@ -13,7 +15,21 @@ export default {
     components: {
         ChatMemberList,
         ChatBox,
-    }
+    },
+    data: function() {
+        return {
+            members: [
+                {
+                    id: 4,
+                    username: 'test04',
+                },
+                {
+                    id: 2,
+                    username: 'test02',
+                },
+            ],
+        };
+    },
 }
 </script>
 
