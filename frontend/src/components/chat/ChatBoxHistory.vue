@@ -43,7 +43,8 @@ export default {
 .chat-box-history__message {
     display: flex;
     align-items: flex-start;
-    margin-top: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 .chat-box-history__message span {
     padding: 10px;

@@ -4,7 +4,7 @@
             <chat-member :id="chatId" :username="chatUsername"></chat-member>
         </header>
         <chat-box-history :messages="messages"></chat-box-history>
-        <chat-box-input></chat-box-input>
+        <chat-box-input @send="sendMessage"></chat-box-input>
     </div>
 </template>
 
@@ -24,6 +24,11 @@ export default {
         "chatUsername",
         "messages"
     ],
+    methods: {
+        sendMessage(message) {
+            this.$emit('send', message);
+        }
+    }
 }
 </script>
 

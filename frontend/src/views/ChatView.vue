@@ -8,6 +8,7 @@
             :chatId="selectedUser.id"
             :chatUsername="selectedUser.username"
             :messages="messages"
+            @send="sendMessage"
             class="chat-box"></chat-box>
     </div>
 </template>
@@ -54,12 +55,14 @@ export default {
                     sendDate: new Date(),
                 },
             ],
-
         };
     },
     methods: {
         selectUser({id, username}) {
             this.selectedUser = {id, username};
+        },
+        sendMessage(message) {
+            console.log(message);
         }
     }
 }
