@@ -1,12 +1,16 @@
 <template>
     <div>
-        chat-box-header
+        <user-image></user-image>
     </div>
 </template>
 
 <script>
-export default {
+import UserImage from '@/components/common/UserImage.vue';
 
+export default {
+    components: {
+        UserImage,
+    }
 }
 </script>
 

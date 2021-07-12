@@ -13,6 +13,7 @@
                 <chat-member 
                     :id="member.id"
                     :username="member.username"
+                    @click.native="clickMember(member.id, member.username)"
                     class="pointer"></chat-member>
             </li>
         </ul>
@@ -35,6 +36,11 @@ export default {
             'getUid',
             'getUsername',
         ]),
+    },
+    methods: {
+        clickMember(id, username) {
+            this.$emit("selectUser", {id, username});
+        }
     }
 }
 </script>

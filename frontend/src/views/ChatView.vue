@@ -2,8 +2,12 @@
     <div class="container">
         <chat-member-list 
             :members="members"
+            @selectUser="selectUser"
             class="chat-member-list"></chat-member-list>
-        <chat-box class="chat-box"></chat-box>
+        <chat-box 
+            :chatId="selectedUser.id"
+            :chatUsername="selectedUser.username"
+            class="chat-box"></chat-box>
     </div>
 </template>
 
@@ -28,8 +32,17 @@ export default {
                     username: 'test02',
                 },
             ],
+            selectedUser: {
+                id: 0,
+                username: "",
+            }
         };
     },
+    methods: {
+        selectUser({id, username}) {
+            this.selectedUser = {id, username};
+        }
+    }
 }
 </script>
 
