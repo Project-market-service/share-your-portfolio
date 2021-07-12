@@ -3,7 +3,7 @@
         <header class="chat-box__header">
             <chat-member :id="chatId" :username="chatUsername"></chat-member>
         </header>
-        <chat-box-history></chat-box-history>
+        <chat-box-history :messages="messages"></chat-box-history>
         <chat-box-input></chat-box-input>
     </div>
 </template>
@@ -21,7 +21,8 @@ export default {
     },
     props: [
         "chatId",
-        "chatUsername"
+        "chatUsername",
+        "messages"
     ],
 }
 </script>

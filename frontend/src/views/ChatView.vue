@@ -7,6 +7,7 @@
         <chat-box 
             :chatId="selectedUser.id"
             :chatUsername="selectedUser.username"
+            :messages="messages"
             class="chat-box"></chat-box>
     </div>
 </template>
@@ -35,7 +36,25 @@ export default {
             selectedUser: {
                 id: 0,
                 username: "",
-            }
+            },
+            messages: [
+                {
+                    senderId: 2,
+                    content: "Hello!",
+                    sendDate: new Date(),
+                },
+                {
+                    senderId: 2,
+                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos obcaecati voluptatum inventore voluptate vel praesentium, dolore repellendus iure veritatis, culpa labore laudantium consequatur facere libero quo aperiam odit neque dolor!",
+                    sendDate: new Date(),
+                },
+                {
+                    senderId: 3,
+                    content: "Hi!",
+                    sendDate: new Date(),
+                },
+            ],
+
         };
     },
     methods: {
