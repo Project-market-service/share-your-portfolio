@@ -43,6 +43,7 @@ export default {
 .chat-member-list {
     box-sizing: border-box;
     padding: 30px 20px;
+    border-right: 1px solid lightgray;
 }
 .chat-member-list__input {
     margin: 24px 0;
