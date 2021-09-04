@@ -19,9 +19,7 @@ public class DatabaseConfig {
 
 	private final String driverClassName = "com.mysql.cj.jdbc.Driver";
 	
-	private final String[] typeAliasesPackage = {
-		"com.spring.api.domain.model",
-	};
+	private final String typeAliasesPackage = "com.spring.api";
 	
 	private final String mapperLocations = "classpath:mappers/**/*.xml";
 	
@@ -67,9 +65,7 @@ public class DatabaseConfig {
 		factoryBean.setDataSource(dataSource());
 		factoryBean.setTransactionFactory(transactionFactory());
 		factoryBean.setConfiguration(myBatisConfig());
-		for (String pkg : typeAliasesPackage) {
-			factoryBean.setTypeAliasesPackage(pkg);
-		}
+		factoryBean.setTypeAliasesPackage(typeAliasesPackage);
 		factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));
 		return factoryBean;
 	}
